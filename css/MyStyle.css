@@ -12,18 +12,18 @@ body {
 }
 
 body{ 
-background: linear-gradient(to top, #fefcea, #deb887) ;
+background: linear-gradient(to top, #fefcea, #E9F5E1) ; 
 background-repeat: no-repeat;
 background-attachment: fixed;
     
 }
-.footer {
-    position: absolute;
-    width: 100%;
-    background: #7e7e7e;
-    color: #dbdbdb;
-    font-size: 11px;
-}
+footer{
+            position: absolute;
+            width: 100%;
+            background: #f5f4f2;
+            font-size: 11px;
+        }
+
 
 #footer {
     max-width: 960px;
@@ -63,11 +63,6 @@ background-attachment: fixed;
 .image{
 	font-size: 14px;
 }
-.container {
-            padding: 20px;
-			background: #77c4d9;
-			color: #dbdbdb;
-        }
 .form-control {
   display: block;
   width: 100%;
