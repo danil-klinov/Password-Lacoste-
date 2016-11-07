@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Регистрация</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/MyStyle.css" media="screen" type="text/css" />
+	<script src="js/jquery-3.1.1.js"></script>
+	
+</head>
+
+<body>
+
+
+
+	<div class="center-wrap2">
+        <div class="col-md-4 col-xs-1 col-sm-2" ></div>
+        <div class="col-md-4 col-xs-10 col-sm-8">
+
+            <form action="" id="f1" method="post" >
+                <h1>Регистрация</h1>
+
+                <input type="text" name="login" required="" id="login" class="form-control" placeholder="Логин&nbsp;*" value="" style="color: black"/>
+				
+                <input type="password" name="password" required="" id="password" class="form-control" placeholder="Пароль&nbsp;*" value="" style="color: black"/>
+				
+                <input type="password" name="password_repeat" required="" id="password_conf" class="form-control" placeholder="Повторите пароль&nbsp;*" value="" style="color: black"/>
+				
+				<input type="text" name="name" id="name"  class="form-control" placeholder="Имя" value="" style="color: black"/>
+				
+                <input type="text" name="mail" id="mail"  class="form-control" placeholder="Электронная почта" value="" style="color: black"/>
+				
+                <input type="text" name="town" id="town" class="form-control" placeholder="Город" value="" style="color: black"/>
+				
+                <input type="text" name="old" id="old" class="form-control" placeholder="Возраст" value="" style="color: black"/>
+				
+                <h3>Пол</h3>
+                <div class="radio">
+                    <label class="rbElem">
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        Мужской
+                    </label>
+                    <label class="rbElem">
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        Женский
+                    </label>
+                </div>
+                <textarea name="about" id="about" placeholder="Расскажите о себе" class="form-control input-contrast comment-form-textarea field" style="max-height: 233px; height: 100px; color: black;"></textarea>
+                <h3>Аватарка</h3>
+                <input type="file"  name="my-pic" id="file-field" multiple="" class="image" style="color: black"/>
+
+                <div id="photo_copy"></div>
+
+                <script>
+                $(function(){
+                    $(".image").change(showPreviewImage_click);
+                })
+                function showPreviewImage_click(e) {
+                    var $input = $(this);
+                    var inputFiles = this.files;
+                    if(inputFiles == undefined || inputFiles.length == 0) return;
+                    var inputFile = inputFiles[0];
+                    var img = $('<img/>',{'class':'preview'});
+                    $('#photo_copy img').remove();
+                    img.appendTo($('#photo_copy'));
+                    var reader = new FileReader();
+                    reader.onload = function(event) {
+                        img.attr("src", event.target.result);
+                    };
+                    reader.onerror = function(event) {
+                        alert("I AM ERROR: " + event.target.error.code);
+                    };
+                    reader.readAsDataURL(inputFile);
+                }
+                </script>
+
+                <br>
+                *&nbsp;Обязательно для заполнения
+                <br>
+                <input type="submit" name="reg" id="reg" value="Регистрация" class="button" value=""/>
+                <br>
+                <p id="out"></p>
+            </form>
+        </div>
+        <div class="col-md-3 col-xs-1 col-sm-2"></div>
+    </div>
+</body>
+</html>
