@@ -6,6 +6,11 @@
 }
 
 
+h6{
+            font-size: 43px;
+            font-style: normal;
+            font-family: "Book Antiqua";
+}
 body {
   font-family: Helvetica,sans-serif;
   font-size: 22px;
@@ -16,6 +21,14 @@ background: linear-gradient(to top, #fefcea, #E9F5E1) ;
 background-repeat: no-repeat;
 background-attachment: fixed;
     
+}
+
+.body2{
+	font-family: Helvetica,sans-serif;
+	font-size: 22px;
+	background: linear-gradient(to top, #f3e6f5, #ffffff) ; 
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 footer{
             position: absolute;
@@ -29,7 +42,7 @@ footer{
     max-width: 960px;
     margin: auto;
     adding: 10px 0;
-    height: 90px;
+    height: 60px;
 }
 #footer-text {
             float: right;
